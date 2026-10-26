@@ -187,7 +187,7 @@
 ```mermaid
 xychart-beta
     title "주요 도메인별 허용 최대 암호 엔트로피 비교 (단위: bits)"
-    x-axis ["naver.com (16자)", "kt.com (16자)", "NIST 표준 / 은행·이커머스 (20자)", "daum.net (32자)", "dcinside.com (40자)"]
+    x-axis ["naver.com (16자)", "kt.com (16자)", "NIST 기준 (20자)", "daum.net (32자)", "dcinside.com (40자)"]
     y-axis "Shannon Entropy (bits)" 0 --> 280
     bar [104.87, 104.87, 131.09, 209.75, 262.18]
 ```

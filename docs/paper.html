@@ -49,6 +49,7 @@
     .print-btn:hover {
       border-color: var(--text-primary);
     }
+
     /* Academic Typography overrides */
     .paper-article {
       font-family: var(--font-body);
@@ -109,7 +110,11 @@
     }
     .paper-article th {
       background-color: var(--bg-surface);
+      color: var(--text-primary);
       font-weight: 600;
+    }
+    .paper-article td {
+      color: var(--text-secondary);
     }
     .paper-article blockquote {
       border-left: 3px solid var(--accent);
@@ -151,6 +156,141 @@
       padding: 8px 0;
       text-align: center;
     }
+    .katex {
+      font-size: 1.05em;
+    }
+
+    /* Responsive Theme-Aware Benchmark Chart */
+    .paper-chart-box {
+      margin: 36px 0;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 24px 20px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .paper-chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .paper-chart-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .paper-chart-legend {
+      display: flex;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-swatch {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .legend-swatch.loss, .bar-loss {
+      background-color: #ef4444;
+      fill: #ef4444;
+    }
+    .legend-swatch.standard, .bar-standard {
+      background-color: #ea580c;
+      fill: #ea580c;
+    }
+    .legend-swatch.pass, .bar-pass {
+      background-color: #10b981;
+      fill: #10b981;
+    }
+    @media (prefers-color-scheme: dark) {
+      .legend-swatch.loss, .bar-loss {
+        background-color: #f87171;
+        fill: #f87171;
+      }
+      .legend-swatch.standard, .bar-standard {
+        background-color: #fb923c;
+        fill: #fb923c;
+      }
+      .legend-swatch.pass, .bar-pass {
+        background-color: #34d399;
+        fill: #34d399;
+      }
+    }
+    .chart-grid line {
+      stroke: var(--border-subtle);
+      stroke-width: 1;
+    }
+    .chart-grid line.base-axis {
+      stroke: var(--border-card);
+      stroke-width: 1.5;
+    }
+    .chart-grid .y-label {
+      fill: var(--text-muted);
+      font-size: 11px;
+      font-family: var(--font-mono);
+      text-anchor: end;
+    }
+    .y-axis-title {
+      fill: var(--text-secondary);
+      font-size: 11px;
+      font-family: var(--font-body);
+      text-anchor: middle;
+    }
+    .ref-line-nist {
+      stroke: var(--accent);
+      stroke-dasharray: 4 4;
+      stroke-width: 1.5;
+      opacity: 0.85;
+    }
+    .ref-label-nist {
+      fill: var(--accent);
+      font-size: 11px;
+      font-family: var(--font-mono);
+      text-anchor: end;
+      font-weight: 500;
+    }
+    .bar-rect {
+      transition: opacity 0.2s ease;
+      cursor: pointer;
+    }
+    .bar-rect:hover {
+      opacity: 0.85;
+    }
+    .bar-val-text {
+      fill: var(--text-primary);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      text-anchor: middle;
+    }
+    .x-label-main {
+      fill: var(--text-primary);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      text-anchor: middle;
+    }
+    .x-label-sub {
+      fill: var(--text-muted);
+      font-size: 11px;
+      font-family: var(--font-body);
+      text-anchor: middle;
+    }
+
     .mermaid {
       margin: 32px 0;
       text-align: center;
@@ -371,7 +511,7 @@
 ```mermaid
 xychart-beta
     title "주요 도메인별 허용 최대 암호 엔트로피 비교 (단위: bits)"
-    x-axis ["naver.com (16자)", "kt.com (16자)", "NIST 표준 / 은행·이커머스 (20자)", "daum.net (32자)", "dcinside.com (40자)"]
+    x-axis ["naver.com (16자)", "kt.com (16자)", "NIST 기준 (20자)", "daum.net (32자)", "dcinside.com (40자)"]
     y-axis "Shannon Entropy (bits)" 0 --> 280
     bar [104.87, 104.87, 131.09, 209.75, 262.18]
 ```
@@ -460,6 +600,8 @@ xychart-beta
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
   <script>
+    const CHART_SVG_HTML = "<div class=\"paper-chart-box\">\n  <div class=\"paper-chart-header\">\n    <div class=\"paper-chart-title\">\uc8fc\uc694 \ub3c4\uba54\uc778\ubcc4 \ud5c8\uc6a9 \ucd5c\ub300 \uc554\ud638 \uc5d4\ud2b8\ub85c\ud53c \ube44\uad50</div>\n    <div class=\"paper-chart-legend\">\n      <span class=\"legend-item\"><span class=\"legend-swatch loss\"></span>\uc190\uc2e4\uad70 (16\uc790, -20.0%)</span>\n      <span class=\"legend-item\"><span class=\"legend-swatch standard\"></span>NIST SP 800-63B \uae30\uc900 (20\uc790)</span>\n      <span class=\"legend-item\"><span class=\"legend-swatch pass\"></span>\uace0\uc5d4\ud2b8\ub85c\ud53c \ud5c8\uc6a9\uad70</span>\n    </div>\n  </div>\n  <div class=\"paper-chart-svg-wrap\">\n    <svg viewBox=\"0 0 700 320\" width=\"100%\" height=\"auto\" class=\"paper-svg-chart\">\n      <!-- Grid Lines & Y Axis -->\n      <g class=\"chart-grid\">\n        <line x1=\"60\" y1=\"30\" x2=\"680\" y2=\"30\" />\n        <text x=\"50\" y=\"34\" class=\"y-label\">280</text>\n        <line x1=\"60\" y1=\"60\" x2=\"680\" y2=\"60\" />\n        <text x=\"50\" y=\"64\" class=\"y-label\">240</text>\n        <line x1=\"60\" y1=\"90\" x2=\"680\" y2=\"90\" />\n        <text x=\"50\" y=\"94\" class=\"y-label\">200</text>\n        <line x1=\"60\" y1=\"120\" x2=\"680\" y2=\"120\" />\n        <text x=\"50\" y=\"124\" class=\"y-label\">160</text>\n        <line x1=\"60\" y1=\"150\" x2=\"680\" y2=\"150\" />\n        <text x=\"50\" y=\"154\" class=\"y-label\">120</text>\n        <line x1=\"60\" y1=\"180\" x2=\"680\" y2=\"180\" />\n        <text x=\"50\" y=\"184\" class=\"y-label\">80</text>\n        <line x1=\"60\" y1=\"210\" x2=\"680\" y2=\"210\" />\n        <text x=\"50\" y=\"214\" class=\"y-label\">40</text>\n        <line x1=\"60\" y1=\"240\" x2=\"680\" y2=\"240\" class=\"base-axis\" />\n        <text x=\"50\" y=\"244\" class=\"y-label\">0</text>\n      </g>\n\n      <!-- Y Axis Title -->\n      <text x=\"18\" y=\"135\" class=\"y-axis-title\" transform=\"rotate(-90 18 135)\">\uc5d4\ud2b8\ub85c\ud53c (bits)</text>\n\n      <!-- Reference Line: NIST Standard (131.09 bits -> y = 141.68) -->\n      <line x1=\"60\" y1=\"141.68\" x2=\"680\" y2=\"141.68\" class=\"ref-line-nist\" />\n      <text x=\"675\" y=\"136\" class=\"ref-label-nist\">NIST \uad8c\uace0 \uae30\uc900 (131.09 bits)</text>\n\n      <!-- Bars -->\n      <!-- 1. naver.com (104.87 bits) -->\n      <g class=\"bar-group\">\n        <rect x=\"98\" y=\"161.35\" width=\"56\" height=\"78.65\" rx=\"4\" class=\"bar-rect bar-loss\" />\n        <text x=\"126\" y=\"152\" class=\"bar-val-text\">104.87</text>\n        <text x=\"126\" y=\"258\" class=\"x-label-main\">naver.com</text>\n        <text x=\"126\" y=\"275\" class=\"x-label-sub\">16\uc790 (-20%)</text>\n      </g>\n\n      <!-- 2. kt.com (104.87 bits) -->\n      <g class=\"bar-group\">\n        <rect x=\"220\" y=\"161.35\" width=\"56\" height=\"78.65\" rx=\"4\" class=\"bar-rect bar-loss\" />\n        <text x=\"248\" y=\"152\" class=\"bar-val-text\">104.87</text>\n        <text x=\"248\" y=\"258\" class=\"x-label-main\">kt.com</text>\n        <text x=\"248\" y=\"275\" class=\"x-label-sub\">16\uc790 (-20%)</text>\n      </g>\n\n      <!-- 3. NIST \ud45c\uc900 / \uc740\ud589\u00b7\uc774\ucee4\uba38\uc2a4 (131.09 bits) -->\n      <g class=\"bar-group\">\n        <rect x=\"342\" y=\"141.68\" width=\"56\" height=\"98.32\" rx=\"4\" class=\"bar-rect bar-standard\" />\n        <text x=\"370\" y=\"132\" class=\"bar-val-text standard\">131.09</text>\n        <text x=\"370\" y=\"258\" class=\"x-label-main\">NIST \uae30\uc900</text>\n        <text x=\"370\" y=\"275\" class=\"x-label-sub\">20\uc790 (\uc740\ud589\u00b7\ucee4\uba38\uc2a4)</text>\n      </g>\n\n      <!-- 4. daum.net (209.75 bits) -->\n      <g class=\"bar-group\">\n        <rect x=\"464\" y=\"82.69\" width=\"56\" height=\"157.31\" rx=\"4\" class=\"bar-rect bar-pass\" />\n        <text x=\"492\" y=\"73\" class=\"bar-val-text\">209.75</text>\n        <text x=\"492\" y=\"258\" class=\"x-label-main\">daum.net</text>\n        <text x=\"492\" y=\"275\" class=\"x-label-sub\">32\uc790 (+60%)</text>\n      </g>\n\n      <!-- 5. dcinside.com (262.18 bits) -->\n      <g class=\"bar-group\">\n        <rect x=\"586\" y=\"43.36\" width=\"56\" height=\"196.64\" rx=\"4\" class=\"bar-rect bar-pass\" />\n        <text x=\"614\" y=\"34\" class=\"bar-val-text\">262.18</text>\n        <text x=\"614\" y=\"258\" class=\"x-label-main\">dcinside.com</text>\n        <text x=\"614\" y=\"275\" class=\"x-label-sub\">40\uc790 (+100%)</text>\n      </g>\n    </svg>\n  </div>\n</div>";
+
     document.addEventListener('DOMContentLoaded', () => {
       const rawMd = document.getElementById('paper-raw').textContent;
       const target = document.getElementById('paper-content');
@@ -525,24 +667,34 @@ xychart-beta
         target.innerHTML = html;
       }
 
-      // 4. Convert mermaid code blocks
+      // 4. Convert mermaid / xychart code blocks
       const codeBlocks = target.querySelectorAll('pre code.language-mermaid');
       codeBlocks.forEach(codeEl => {
+        const content = codeEl.textContent.trim();
         const preEl = codeEl.parentElement;
-        const div = document.createElement('div');
-        div.className = 'mermaid';
-        div.textContent = codeEl.textContent;
-        preEl.parentNode.replaceChild(div, preEl);
+
+        if (content.startsWith('xychart') || content.includes('암호 엔트로피 비교')) {
+          // Replace buggy Mermaid beta chart with theme-aware responsive SVG chart
+          const temp = document.createElement('div');
+          temp.innerHTML = CHART_SVG_HTML;
+          preEl.parentNode.replaceChild(temp.firstElementChild, preEl);
+        } else {
+          const div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = content;
+          preEl.parentNode.replaceChild(div, preEl);
+        }
       });
 
-      // 5. Initialize Mermaid Diagrams
-      if (typeof mermaid !== 'undefined') {
+      // 5. Initialize Mermaid for other diagrams if any remain
+      const remainingMermaid = document.querySelectorAll('.mermaid');
+      if (typeof mermaid !== 'undefined' && remainingMermaid.length > 0) {
         mermaid.initialize({
           startOnLoad: false,
-          theme: 'neutral',
+          theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'neutral',
           securityLevel: 'loose'
         });
-        mermaid.run({ nodes: document.querySelectorAll('.mermaid') });
+        mermaid.run({ nodes: remainingMermaid });
       }
     });
   </script>
