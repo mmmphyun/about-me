@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한승윤 · 이력서 · 자기소개서 · 경력기술서</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      padding: 40px 24px 100px;
+    }
+    .doc-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .doc-nav-bar a {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .doc-nav-bar a:hover {
+      color: var(--accent);
+    }
+    .print-btn {
+      cursor: pointer;
+      background: none;
+      border: 1px solid var(--border-card);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      color: var(--text-primary);
+    }
+    .print-btn:hover {
+      border-color: var(--text-primary);
+    }
+    .resume-header {
+      margin-bottom: 40px;
+    }
+    .resume-header h1 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+    .resume-header .meta {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .doc-section {
+      margin-bottom: 56px;
+    }
+    .doc-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    .doc-section h3 {
+      font-size: 1.15rem;
+      margin: 20px 0 10px;
+      color: var(--text-primary);
+    }
+    .doc-section p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    .doc-section ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      color: var(--text-secondary);
+    }
+    .doc-section li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+    .career-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 0.92rem;
+    }
+    .career-table th, .career-table td {
+      border: 1px solid var(--border-card);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.65;
+    }
+    .career-table th {
+      background-color: var(--bg-primary);
+      font-weight: 600;
+    }
+    .badge-comp {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    @media print {
+      .doc-nav-bar { display: none; }
+      body { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="doc-nav-bar">
+      <a href="../index.html">← 소개 사이트로 돌아가기</a>
+      <button class="print-btn" onclick="window.print()">인쇄 / PDF 저장</button>
+    </div>
+
+    <div class="resume-header">
+      <h1>이력서 · 자기소개서 · 경력기술서</h1>
+      <div class="meta">
+        작성자: 한승윤 · 클라우드 인프라 엔지니어 · gksdmqdbs@gmail.com · 2026-10-26
+      </div>
+    </div>
+
+    <!-- 1. 이력서 -->
+    <section class="doc-section">
+      <h2>1. 이력서 (Resume)</h2>
+
+      <h3>기본 정보</h3>
+      <ul>
+        <li><strong>이름</strong>: 한승윤 (Seungyun Han)</li>
+        <li><strong>희망 직무</strong>: 클라우드 인프라 엔지니어 (Cloud Infrastructure Engineer)</li>
+        <li><strong>공개 연락처</strong>: gksdmqdbs@gmail.com</li>
+        <li><strong>GitHub</strong>: <a href="https://github.com/mmmphyun" target="_blank">https://github.com/mmmphyun</a></li>
+        <li><strong>기술 블로그</strong>: <a href="https://mmmphyun.github.io/security-agent-toolkit/blog/" target="_blank">https://mmmphyun.github.io/security-agent-toolkit/blog/</a></li>
+      </ul>
+
+      <h3>프로필 요약 (Professional Summary)</h3>
+      <p>
+        물리적 리소스 제약과 대륙 간 분산 지연 환경에서 시스템 병목을 계측 데이터로 증명하고 아키텍처로 해결하는 클라우드 인프라 엔지니어입니다.
+        단일 노드 1GB RAM 및 200ms 왕복 지연 환경에서 소켓 상태 검사와 Redis 캐시 제어로 평균 응답 지연을 96.0% 단축하고 자가 치유 연결 파이프라인을 구축했습니다.
+        4인 병렬 협업 환경에서 Pydantic V2 불변 데이터 계약과 Git 디렉터리 화이트리스트 하네스를 설계해 모듈 간 정합성을 통제하고 비인가 코드 오염을 원천 차단했습니다.
+        추측 대신 정량적 계측 데이터와 코드로 시스템의 물리적 한계를 검증하며, 단순하고 견고한 운영 구조를 만듭니다.
+      </p>
+
+      <h3>기술 스택 (Technical Skills)</h3>
+      <ul>
+        <li><strong>Language & Backend</strong>: Python (FastAPI, asyncio, Pydantic V2, pytest), Bash, Rust (Wasm 기초)</li>
+        <li><strong>Cloud & Infrastructure</strong>: AWS (EC2, VPC, WAF, DynamoDB, Lambda, S3), GCP (Compute Engine), Terraform, Docker, Linux</li>
+        <li><strong>Database & Cache</strong>: PostgreSQL, Redis</li>
+        <li><strong>CI/CD & Governance</strong>: Git, GitHub Actions, Harness Verification Scripts</li>
+      </ul>
+
+      <h3>학력 및 교육 이력</h3>
+      <ul>
+        <li><strong>충남대학교</strong>: 컴퓨터공학과 학사 재학 (2020.03 - 현재, 휴학 중)</li>
+        <li><strong>ALEPH 부트캠프</strong>: 클라우드 인프라 및 에이전트 엔지니어링 과정 수료 예정 (2026.08 - 2026.11)</li>
+        <li><strong>군 복무</strong>: 대한민국 육군 포병 병포반장 만기 전역 (2022.04 - 2023.10)</li>
+      </ul>
+    </section>
+
+    <!-- 2. 자기소개서 -->
+    <section class="doc-section">
+      <h2>2. 자기소개서 (Cover Letter)</h2>
+      <h3>고난을 지나 더 나아진 나로</h3>
+      <p>
+        2024년 봄 대학 복학 직후 마주한 강의실은 내게 큰 전환점이었습니다. 강의실에서 마주한 생성형 AI는 기존에 많은 시간을 들여 작성하던 코드를 단 몇 초 만에 생성하고 있었습니다. 비슷한 시기, 오랜 기간 디자인 분야에서 일하던 사촌 형이 AI의 영향으로 업계를 떠나 도축업으로 이직했다는 소식을 접했습니다. 단순 문법 코딩이 아닌 대체 불가능한 엔지니어링의 본질을 찾기 위해 진로의 선택지를 원점에서 재검토하는 시간을 가졌습니다. 포병 복무 당시 장비와 지침을 다루며 느꼈던 효능감을 바탕으로 현장 기술직까지 비교 선상에 올린 끝에, 내가 다뤄야 할 대상은 프롬프트가 아닌 '네트워크와 인프라의 물리적 한계'라는 결론을 내렸습니다.
+      </p>
+      <p>
+        방향을 정한 직후, 동시접속 20명 규모의 게임 커뮤니티를 위한 rpg_sync_project를 설계하여 미국 GCP 무료 단일 노드(1GB RAM)에 직접 배포하고 운영에 들어갔습니다. 한국 데이터베이스와의 200ms 네트워크 왕복 지연과 커넥션 풀 고갈, 메모리 부족은 AI 프롬프트만으로 해결되지 않았습니다. 나는 직접 소켓 연결 상태를 검사해 불필요한 왕복 쿼리를 차단하고, 50MB 상한의 Redis 캐시 계층과 연결 복구 로직을 구현해 무중단 운영을 지켜냈습니다. 특히 이 서비스를 운영하던 중, 해당 게임 서버의 실이용자였던 현직 개발자와 커피챗을 진행하며 인프라 병목을 해결한 아키텍처에 대해 깊이 있는 기술적 피드백을 주고받았습니다. 물리적 제약을 계측하고 서비스 가용성을 보장하는 일이야말로 사람 엔지니어의 몫임을 확신한 순간이었습니다.
+      </p>
+      <p>
+        이러한 태도는 부트캠프 협업 과정에서 마주한 가장 큰 고비에서도 발휘되었습니다. 4인 팀의 조장을 맡아 팀원들이 안전하게 개발할 수 있도록 CI 디렉터리 격리 하드가드를 설계했습니다. 그러나 2026년 9월 30일, 시나리오 1을 마친 직후 돌아보니 각자의 작업 공간을 지나치게 나눈 하드가드 때문에 오히려 모듈 간 데이터 정합성이 깨져버리는 위기가 터졌습니다. 저녁 마무리 리추얼에 '강점 행동: 못 했다'고 적으며 "진짜 좀 쉬자"고 한숨을 남겼을 만큼 지친 날이었지만, 도망치지 않았습니다. 나는 쉬어가려던 계획을 즉시 접고 팀원들과 긴급 회의를 열어 문제를 공유했습니다. 불변 데이터 계약을 재정의하고 하네스 규칙을 선제적으로 개편하여 정합성을 정상 복구했습니다. 팀원들로부터 "예상치 못한 위기에서도 동요하지 않고 팀을 이끈다"는 신뢰를 얻은 전환점이었습니다.
+      </p>
+      <p>
+        방황과 위기를 통과한 지금의 나는 2026년 10월 14일 아침 일기에 스스로 다짐하듯 적었던 그대로, "내 에이전트를 맹신하지 않고 항상 계측 데이터와 증거를 요구하는 사람"이 되었습니다. 13주 동안 매일 아침 출결 루틴을 지키고 50일간 리추얼을 빠짐없이 기록하며 회복탄력성을 숫자로 증명했습니다. 이제 나는 단일 노드 운영을 넘어, 분산 클라우드 인프라의 병목을 실측하고 선언적 자동화로 시스템의 무결성을 지키는 클라우드 인프라 엔지니어로 나아가고 있습니다.
+      </p>
+    </section>
+
+    <!-- 3. 경력기술서 -->
+    <section class="doc-section">
+      <h2>3. 경력기술서 (Project & Task Experience)</h2>
+      <p>
+        수행한 핵심 과제 및 프로젝트를 3대 능력(자기조절력, 대인관계력, 자기동기력)으로 분류하고, 상황(Situation)·행동(Action)·결과(Result) 구조로 정리했습니다.
+      </p>
+
+      <table class="career-table">
+        <thead>
+          <tr>
+            <th style="width: 8%;">번호</th>
+            <th style="width: 22%;">과제 / 프로젝트</th>
+            <th style="width: 15%;">해당 능력</th>
+            <th style="width: 55%;">상황(S) · 행동(A) · 결과(R)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td><strong>과제 1 (T01)</strong><br>인터랙티브 웹 구현</td>
+            <td><span class="badge-comp">자기동기력</span></td>
+            <td>
+              <strong>[S]</strong> 축구 전술 분석 모티프 아이디어가 정적 문서에 머묾.<br>
+              <strong>[A]</strong> 브라우저 메인 스레드 부하 방지를 위해 오프스크린 캔버스 도트 렌더링 파이프라인 자발적 구현.<br>
+              <strong>[R]</strong> FPS 저하 없는 60fps 3D 전술판 애니메이션 완성 및 즉시 배포.
+            </td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td><strong>과제 4 (T04)</strong><br>일일 브리핑 자동화</td>
+            <td><span class="badge-comp">자기동기력</span></td>
+            <td>
+              <strong>[S]</strong> 매일 파편화된 플랫폼 정보를 수작업 취합하는 비효율 발생.<br>
+              <strong>[A]</strong> REST API 수집 파이프라인과 비동기 대시보드를 직접 설계하여 취합 자동화 구축.<br>
+              <strong>[R]</strong> 아침 정보 탐색 소요 시간을 일 25분에서 2분 이내로 단축.
+            </td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td><strong>과제 5 (T05)</strong><br>세션 메모리 가드레일</td>
+            <td><span class="badge-comp">자기조절력</span></td>
+            <td>
+              <strong>[S]</strong> AI 에이전트 간 인수인계 시 컨텍스트 유실 및 미검증 코드 오염 위험 상존.<br>
+              <strong>[A]</strong> Gitleaks 정규식 차단과 10대 가드레일, Git HEAD 불변식 검증기로 증거 요구 강제.<br>
+              <strong>[R]</strong> 50회 이상 세션 핸드오버 간 컨텍스트 오염율 0.0% 및 시크릿 유출 0건 달성.
+            </td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td><strong>과제 7 (T07)</strong><br>인증 및 IDOR 방어</td>
+            <td><span class="badge-comp">자기조절력</span></td>
+            <td>
+              <strong>[S]</strong> 단순 프론트엔드 숨김 처리에 의존할 경우 수평적 권한 상승(IDOR) 위험 인지.<br>
+              <strong>[A]</strong> 클라이언트 제어를 불신하고 서버 사이드 세션 검증 및 사용자 ID 쿼리 스코프 강제.<br>
+              <strong>[R]</strong> 타인 리소스 무단 접근 시도를 100% 403 Forbidden으로 차단하고 무결성 확보.
+            </td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td><strong>과제 8 (T08)</strong><br>FIDO2 WebAuthn 패스키</td>
+            <td><span class="badge-comp">자기조절력</span></td>
+            <td>
+              <strong>[S]</strong> AI가 구현 편의를 이유로 보안상 취약한 로컬스토리지 JWT 방식을 제안함.<br>
+              <strong>[A]</strong> AI 제안을 기각하고 HttpOnly 쿠키와 WebAuthn 일회용 챌린지 검증 파이프라인 및 20개 자동 검증 스크립트 구축.<br>
+              <strong>[R]</strong> 토큰 탈취 벡터를 원천 제거하고 20개 전수 보안 테스트 통과 입증.
+            </td>
+          </tr>
+          <tr>
+            <td>06</td>
+            <td><strong>과제 10 (T10)</strong><br>PrfVault 보안 실측 논문</td>
+            <td><span class="badge-comp">자기동기력</span></td>
+            <td>
+              <strong>[S]</strong> 국내 웹 환경 비표준 보안 통제가 브라우저 보안 및 암호 엔트로피에 미치는 영향 실증 필요.<br>
+              <strong>[A]</strong> Playwright 자동화 스캐너로 국내 50대 웹사이트의 로그인 DOM을 전수 조사하고 엔트로피 손실률 계측.<br>
+              <strong>[R]</strong> 50개 사이트 전수 스캔 및 NIST 기준 대비 엔트로피 결손 정량 데이터 도출, 단독 정식 논문 집필 완료.
+            </td>
+          </tr>
+          <tr>
+            <td>07</td>
+            <td><strong>과제 11 (T11)</strong><br>3만 자 장편소설 완주</td>
+            <td><span class="badge-comp">자기조절력</span></td>
+            <td>
+              <strong>[S]</strong> 10개 장, 3만 자 이상의 방대한 분량에서 시간선 충돌 및 인과 왜곡 위험 존재.<br>
+              <strong>[A]</strong> 5대 범주 대조표와 문단 앵커 검증 스크립트를 직접 제작하여 매 작성 단계마다 엄격한 교차 검증 수행.<br>
+              <strong>[R]</strong> 설정 충돌 0건, 40자 이상 중복 0건, 본문 공백 제외 37,054자 완주 및 승인 통과.
+            </td>
+          </tr>
+          <tr>
+            <td>08</td>
+            <td><strong>RPG Sync 프로젝트</strong><br>단일 노드 분산 인프라</td>
+            <td><span class="badge-comp">자기동기력</span></td>
+            <td>
+              <strong>[S]</strong> 동접 20명 커뮤니티에서 한국 DB와 미국 GCP 무료 노드(1GB RAM) 간 200ms 지연 및 커넥션 풀 고갈 발생.<br>
+              <strong>[A]</strong> 직접 소켓 연결 검사 계층을 구축하고 50MB 상한의 Redis 캐시 사전 예열 및 자동 복구 로직 구현.<br>
+              <strong>[R]</strong> 평균 응답 지연 96.0% 단축 및 다운타임 제로(0건) 가용성 입증.
+            </td>
+          </tr>
+          <tr>
+            <td>09</td>
+            <td><strong>CloudShield 캡스톤</strong><br>4인 협업 하네스 구축</td>
+            <td><span class="badge-comp">대인관계력</span></td>
+            <td>
+              <strong>[S]</strong> 4인 팀 병렬 개발 중 디렉터리 격리 하드가드로 인해 모듈 간 정합성이 깨지는 위기(2026-09-30) 발생.<br>
+              <strong>[A]</strong> 팀 조장으로서 휴식을 미루고 긴급 회의를 소집하여 Pydantic V2 불변 데이터 계약을 재합의하고 CI 검증 규칙 선제 개편.<br>
+              <strong>[R]</strong> 팀원 온보딩 병목 해소, 정합성 100% 정상화 및 모의 침해 시나리오 8종 전수 통과.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

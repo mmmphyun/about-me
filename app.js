@@ -35,7 +35,13 @@ document.addEventListener("DOMContentLoaded", async () => {
           const pRes = await fetch("docs/T10_PAPER.md");
           if (pRes.ok) {
             const rawMd = await pRes.text();
-            modalContent.innerHTML = `<pre style="white-space: pre-wrap; font-family: var(--font-body); font-size: 0.95rem; line-height: 1.8;">${escapeHtml(rawMd)}</pre>`;
+            let htmlContent = rawMd;
+            if (typeof marked !== "undefined" && typeof marked.parse === "function") {
+              htmlContent = marked.parse(rawMd);
+            } else {
+              htmlContent = `<pre style="white-space: pre-wrap; font-family: var(--font-body); font-size: 0.95rem; line-height: 1.8;">${escapeHtml(rawMd)}</pre>`;
+            }
+            modalContent.innerHTML = `<div class="markdown-body">${htmlContent}</div>`;
             modalContent.dataset.loaded = "true";
           } else {
             modalContent.innerHTML = `<p>원문을 바로 확인하시려면 <a href="docs/T10_PAPER.md" target="_blank">여기(T10_PAPER.md)</a>를 클릭하세요.</p>`;
