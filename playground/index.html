@@ -539,13 +539,22 @@
             "네이버·KT의 짧은 16자 비밀번호 제한이나 금융권 마우스 가상 키패드로 고통받는 이용자를 위해, 사이트 제약에 맞춘 가장 안전한 암호를 즉시 만들고 복사 5초 뒤 메모리에서 비밀번호를 완전히 지워 계정을 지켜주는 브라우저 보안 앱입니다."
         </p>
 
-        <!-- 30초 빠른 온보딩 가이드 -->
-        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 14px 18px; margin: 20px 0; text-align: left;">
-            <div style="font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 8px;">💡 30초 빠른 체험 방법 (설명 없이 바로 따라하기):</div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; font-size: 13px; color: var(--text-body); line-height: 1.5;">
-                <div><span style="color: var(--accent); font-weight: 600;">1. 사이트 선택:</span> 아래 칩에서 <strong>[네이버 (16자 제한)]</strong> 클릭</div>
-                <div><span style="color: var(--accent); font-weight: 600;">2. 암호 생성:</span> 2단계에서 <strong>[적응형 암호 생성]</strong> 버튼 클릭</div>
-                <div><span style="color: var(--accent); font-weight: 600;">3. 메모리 소거:</span> 3단계에서 <strong>[1회용 복사]</strong> 누르고 5초 뒤 메모리가 00으로 삭제되는 덤프 확인</div>
+        <!-- 스토리라인 3단계 체험 가이드 -->
+        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 16px 20px; margin: 20px 0; text-align: left;">
+            <div style="font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 10px;">📖 1분 스토리 체험 동선 (위험 발견에서 안전한 파기까지):</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 13px; color: var(--text-body); line-height: 1.55;">
+                <div style="background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
+                    <div style="color: var(--accent); font-weight: 600; margin-bottom: 3px;">1단계. 위험 발견</div>
+                    아래 칩에서 <strong>[네이버 (16자 제한)]</strong> 클릭해 내 계정이 왜 취약한지 확인
+                </div>
+                <div style="background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
+                    <div style="color: var(--emerald); font-weight: 600; margin-bottom: 3px;">2단계. 맞춤 해결</div>
+                    <strong>[적응형 암호 생성]</strong>을 눌러 16자 한도 내 58조 년 크랙 암호 생성
+                </div>
+                <div style="background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
+                    <div style="color: var(--rose); font-weight: 600; margin-bottom: 3px;">3단계. 흔적 파기</div>
+                    <strong>[1회용 복사]</strong> 누르고 5초 뒤 메모리 바이트가 00으로 삭제되는 덤프 확인
+                </div>
             </div>
         </div>
 
@@ -555,12 +564,15 @@
         </div>
     </header>
 
-    <!-- 1단계: 도메인 제약 진단 -->
+    <!-- 1단계: 도메인 제약 진단 (스토리: 위험 발견) -->
     <section class="wb-section">
         <div class="wb-section-header">
-            <span class="section-label">01 / DIAGNOSIS</span>
-            <span class="section-desc">국내 50대 웹사이트 로그인 DOM 비표준 제약조건 실측 분석</span>
+            <span class="section-label" style="background: rgba(56, 189, 248, 0.15); color: var(--accent); border: 1px solid var(--accent); padding: 3px 8px; border-radius: 4px; font-weight: 700;">STEP 01. 위험 발견</span>
+            <span class="section-desc" style="font-weight: 600; color: var(--text-title);">내가 이용하는 사이트, 비밀번호가 왜 취약할까?</span>
         </div>
+        <p style="font-size: 13.5px; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.6;">
+            네이버나 은행에 로그인할 때 마주치는 16자 길이 제한이나 마우스 가상 키패드가 내 계정을 어떻게 위협하는지 사이트를 클릭해 확인해 보세요.
+        </p>
 
         <div class="chip-group">
             <button class="chip-btn active" data-domain="naver.com">네이버 (16자 제한)</button>
@@ -584,12 +596,15 @@
         </div>
     </section>
 
-    <!-- 2단계: 적응형 고엔트로피 생성 및 엔트로피 비교 -->
+    <!-- 2단계: 적응형 고엔트로피 생성 (스토리: 맞춤 해결) -->
     <section class="wb-section">
         <div class="wb-section-header">
-            <span class="section-label">02 / ADAPTIVE KEY DERIVATION</span>
-            <span class="section-desc">사이트 제약에 맞춘 94자 복합 문자군 전수 매핑 및 실시간 엔트로피 비교</span>
+            <span class="section-label" style="background: rgba(52, 211, 153, 0.15); color: var(--emerald); border: 1px solid var(--emerald); padding: 3px 8px; border-radius: 4px; font-weight: 700;">STEP 02. 맞춤 해결</span>
+            <span class="section-desc" style="font-weight: 600; color: var(--text-title);">사이트가 16자만 허용해도, 해커가 평생 못 뚫는 암호 만들기</span>
         </div>
+        <p style="font-size: 13.5px; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.6;">
+            사이트가 16자까지만 허용하더라도, 94개 복합 문자군을 빈틈없이 조합하여 해커가 수조 년 동안 대입해도 뚫을 수 없는 최강의 암호를 즉시 계산해 냅니다.
+        </p>
 
         <div class="gen-grid">
             <div>
@@ -601,7 +616,7 @@
                     <label>사이트 상한 길이 (자동 반영):</label>
                     <div style="display: flex; gap: 10px;">
                         <input type="number" id="gen-length-input" value="16" min="8" max="64" style="width: 90px;">
-                        <button id="generate-pw-btn" class="btn-action" style="flex: 1;">적응형 암호 생성</button>
+                        <button id="generate-pw-btn" class="btn-action" style="flex: 1; font-weight: 700;">16자 맞춤 최강 암호 생성</button>
                     </div>
                 </div>
                 <div class="field" style="margin-top: 20px;">
@@ -651,12 +666,15 @@
         </div>
     </section>
 
-    <!-- 3단계: 가상 키패드 대응 & WebAssembly 선형 메모리 물리 소거 -->
+    <!-- 3단계: 가상 키패드 대응 & 물리 소거 (스토리: 흔적 파기) -->
     <section class="wb-section">
         <div class="wb-section-header">
-            <span class="section-label">03 / MEMORY ZEROIZATION</span>
-            <span class="section-desc">WebAssembly Linear Memory (ArrayBuffer) 내 평문 상주 확인 및 0x00 소거</span>
+            <span class="section-label" style="background: rgba(244, 63, 94, 0.15); color: var(--rose); border: 1px solid var(--rose); padding: 3px 8px; border-radius: 4px; font-weight: 700;">STEP 03. 흔적 파기</span>
+            <span class="section-desc" style="font-weight: 600; color: var(--text-title);">복사해서 안심하고 로그인하고, 5초 뒤 메모리에서 흔적 지우기</span>
         </div>
+        <p style="font-size: 13.5px; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.6;">
+            비밀번호를 복사해 가상 키패드나 로그인 창에 붙여넣을 때 컴퓨터 메모리에 남는 평문 비밀번호를 <strong>5초 뒤 00으로 완전히 파기(Zeroize)</strong>하여 악성코드 탈취를 원천 차단합니다.
+        </p>
 
         <div class="terminal-box">
             <div class="terminal-bar">
@@ -671,7 +689,7 @@
 
             <div class="terminal-ctrl">
                 <div>
-                    <button id="copy-mask-btn" class="btn-action">1회용 마스킹 복사 &amp; 5초 Zeroize</button>
+                    <button id="copy-mask-btn" class="btn-action" style="font-weight: 700;">1회용 안심 복사 &amp; 5초 메모리 파기</button>
                     <button id="force-zeroize-btn" class="btn-secondary">즉시 소거</button>
                 </div>
                 <div class="timer-info" id="timer-display">대기 중 (복사 시 카운트다운 시작)</div>
@@ -996,13 +1014,13 @@ function renderDiagnosis(domain) {
     const fb = document.getElementById('diag-feedback-box');
     if (site && (site.domain === 'naver.com' || site.domain === 'kt.com')) {
         fb.className = 'diag-feedback warning';
-        fb.innerHTML = `<strong>${site.domain} 비표준 제약 감지:</strong> 최대 16자 제한으로 NIST 표준(131.09 bits) 대비 정확히 <strong>20.0% (${(131.09 - entropy).toFixed(2)} bits) 엔트로피 결손</strong> 강제. GPU 오프라인 크랙 시간이 약 7,800만 배 단축됩니다.`;
+        fb.innerHTML = `<strong>🚨 ${site.domain} 16자 제한 발견:</strong> 비밀번호를 16자까지만 허용하여 글로벌 표준 대비 <strong>보안 강도가 20% 결손</strong>됩니다. 쉬운 비번을 쓰면 약 7,800만 배 더 쉽게 뚫립니다.<br><span style="display: inline-block; margin-top: 6px; color: var(--accent); font-weight: 600;">👉 아래 2단계에서 [16자 맞춤 최강 암호 생성]을 눌러 해커가 못 푸는 비번을 만들어 보세요!</span>`;
     } else if (isKeypad) {
         fb.className = 'diag-feedback danger';
-        fb.innerHTML = `<strong>${site ? site.domain : domain} 가상 키패드 차단 감지:</strong> 마우스 입력을 강제하여 브라우저 자동 완성을 차단합니다. <strong>3단계: 1회용 마스킹 복사 및 5초 Wasm Zeroize 소거</strong>로 전환하십시오.`;
+        fb.innerHTML = `<strong>🛡️ ${site ? site.domain : domain} 마우스 가상 키패드 감지:</strong> 자동 완성을 막아 마우스로 찍게 만드는 사이트입니다. 복사 후 메모리에 비밀번호가 남는 위험이 있습니다.<br><span style="display: inline-block; margin-top: 6px; color: var(--rose); font-weight: 600;">👉 3단계에서 [1회용 안심 복사 & 5초 메모리 파기]를 사용해 보세요!</span>`;
     } else {
         fb.className = 'diag-feedback success';
-        fb.innerHTML = `<strong>${site ? site.domain : domain} 표준 준수:</strong> 가상 키패드 강제 없이 표준 DOM 입력을 지원하며, NIST 권고치(${entropy.toFixed(1)} bits)를 만족합니다.`;
+        fb.innerHTML = `<strong>✅ ${site ? site.domain : domain} 표준 지원:</strong> 가상 키패드 강제 없이 충분한 길이(${maxLen}자)를 지원합니다. 2단계에서 고강도 암호를 생성해 안전하게 보호할 수 있습니다.`;
     }
 
     document.getElementById('gen-length-input').value = maxLen;
