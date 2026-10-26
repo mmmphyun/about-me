@@ -533,34 +533,53 @@
         </div>
     </nav>
     <header class="wb-header">
-        <div class="meta-eyebrow">PrfVault Interactive Security Tool · 과제 BR-B</div>
-        <h1 class="paper-heading" style="font-size: 22px; line-height: 1.4; margin-bottom: 12px;">PrfVault: 네이버 16자 제한과 가상 키패드 제약을 극복하는 적응형 보안 암호 생성기</h1>
-        <p class="purpose-statement">
-            "네이버·KT의 짧은 16자 비밀번호 제한이나 금융권 마우스 가상 키패드로 고통받는 이용자를 위해, 사이트 제약에 맞춘 가장 안전한 암호를 즉시 만들고 복사 5초 뒤 메모리에서 비밀번호를 완전히 지워 계정을 지켜주는 브라우저 보안 앱입니다."
+        <div class="meta-eyebrow" style="color: var(--accent); font-weight: 700; letter-spacing: 0.05em;">🔐 보안 유틸리티 · 사이트 맞춤형 안심 비밀번호 생성기</div>
+        <h1 class="paper-heading" style="font-size: 26px; line-height: 1.35; margin-bottom: 12px; font-weight: 800;">
+            PrfVault: 네이버·은행 맞춤형 [1초 안심 비밀번호 생성기]
+        </h1>
+        <p class="purpose-statement" style="font-size: 14.5px; line-height: 1.6; color: var(--text-body); background: var(--surface); padding: 14px 18px; border-radius: 8px; border-left: 4px solid var(--accent); margin: 16px 0;">
+            <strong>이 앱이 누구를 어떻게 돕는가:</strong><br>
+            "네이버 16자 제한이나 은행 가상 키패드 때문에 비밀번호 설정이 불안할 때, 사이트에 딱 맞는 가장 강력한 비밀번호를 1초 만에 만들어주고 흔적까지 지워주는 [안심 비밀번호 생성기]입니다."
         </p>
 
+        <!-- 비포 & 애프터 대조 카드: 3초 만에 제품 가치 이해 -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin: 16px 0 20px;">
+            <div style="background: rgba(244, 63, 94, 0.06); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: 8px; padding: 12px 16px;">
+                <div style="color: var(--rose); font-weight: 700; font-size: 13.5px; margin-bottom: 5px;">❌ 기존 사용자의 위험 (Before)</div>
+                <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.55;">
+                    네이버 16자 제한 때문에 <code>qwer1234!</code> 같은 뻔한 비번을 쓰다 해킹당하거나, 은행 마우스 키패드 때문에 메모장에 적어뒀다 털립니다.
+                </div>
+            </div>
+            <div style="background: rgba(52, 211, 153, 0.06); border: 1px solid rgba(52, 211, 153, 0.25); border-radius: 8px; padding: 12px 16px;">
+                <div style="color: var(--emerald); font-weight: 700; font-size: 13.5px; margin-bottom: 5px;">⭕ PrfVault의 해결 (After)</div>
+                <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.55;">
+                    사이트 규칙에 맞춰 <strong>7,800만 배 강력한 암호</strong>를 1초 만에 만들어주고, 로그인 5초 뒤 메모리에서 비밀번호 흔적을 영구 파기합니다.
+                </div>
+            </div>
+        </div>
+
         <!-- 스토리라인 3단계 체험 가이드 -->
-        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 16px 20px; margin: 20px 0; text-align: left;">
-            <div style="font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 10px;">📖 1분 스토리 체험 동선 (위험 발견에서 안전한 파기까지):</div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 13px; color: var(--text-body); line-height: 1.55;">
+        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 14px 18px; margin: 16px 0 18px; text-align: left;">
+            <div style="font-size: 13.5px; font-weight: 700; color: var(--accent); margin-bottom: 8px;">📖 1분 체험 코스 (아래 3단계를 순서대로 따라해보세요):</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; font-size: 13px; color: var(--text-body); line-height: 1.55;">
                 <div style="background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
-                    <div style="color: var(--accent); font-weight: 600; margin-bottom: 3px;">1단계. 위험 발견</div>
-                    아래 칩에서 <strong>[네이버 (16자 제한)]</strong> 클릭해 내 계정이 왜 취약한지 확인
+                    <div style="color: var(--accent); font-weight: 600; margin-bottom: 3px;">1단계. 취약점 진단</div>
+                    아래에서 <strong>[네이버]</strong>를 눌러 16자 제한과 위험도 확인
                 </div>
                 <div style="background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
-                    <div style="color: var(--emerald); font-weight: 600; margin-bottom: 3px;">2단계. 맞춤 해결</div>
-                    <strong>[적응형 암호 생성]</strong>을 눌러 16자 한도 내 58조 년 크랙 암호 생성
+                    <div style="color: var(--emerald); font-weight: 600; margin-bottom: 3px;">2단계. 1초 비번 생성</div>
+                    <strong>[맞춤 최강 암호 생성]</strong>을 눌러 안전한 비밀번호 획득
                 </div>
                 <div style="background: rgba(255,255,255,0.03); padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
-                    <div style="color: var(--rose); font-weight: 600; margin-bottom: 3px;">3단계. 흔적 파기</div>
-                    <strong>[1회용 복사]</strong> 누르고 5초 뒤 메모리 바이트가 00으로 삭제되는 덤프 확인
+                    <div style="color: var(--rose); font-weight: 600; margin-bottom: 3px;">3단계. 흔적 자동 삭제</div>
+                    <strong>[1회용 복사]</strong> 누르고 5초 뒤 메모리가 00으로 파기되는 덤프 확인
                 </div>
             </div>
         </div>
 
         <div class="wasm-pill">
             <span class="status-dot"></span>
-            <span id="wasm-runtime-note">Rust Wasm Linear Memory (64KB ArrayBuffer) 직독 활성화 · 외부 서버 통신 0건</span>
+            <span id="wasm-runtime-note">Rust WebAssembly 클라이언트 단독 연산 · 외부 유출 위험 0건 (제로 서버)</span>
         </div>
     </header>
 
