@@ -375,27 +375,47 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.work-links {
-  display: flex;
-  gap: 18px;
-  font-size: 0.9rem;
-}
-
-/* Documents & Resume Section */
-.doc-box {
-  padding-top: 16px;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.doc-box p {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-}
-
+.work-links,
 .doc-actions {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Unified Action Buttons */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-card);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.action-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: var(--accent-soft);
+}
+
+.action-btn.primary {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: var(--accent-soft);
+  font-weight: 600;
+}
+
+.action-btn.primary:hover {
+  background-color: var(--accent);
+  color: #ffffff;
 }
 
 .btn-editorial {
